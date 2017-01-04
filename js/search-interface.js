@@ -2,6 +2,7 @@ var apiKey = require('./../.env').apiKey;
 var Search = require('./../js/search.js').searchModule;
 
 $(document).ready(function() {
+  $("#outputDetail").hide();
   $('form').submit(function(event) {
     $('#output').html("");
     event.preventDefault();
@@ -17,11 +18,11 @@ $(document).ready(function() {
           if (searchType === "movie") {
             userSearch.titleSet();
             $('.poster').click(function() {
-              debugger;
               $.get("https://api.themoviedb.org/3/movie/" + this.id + "/credits?api_key="+ apiKey).then(function(response) {
                 console.log(response);
                 userSearch.cast(response);
               });
+              $("#outputDetail").show();
             });
           } else {
             userSearch.actorSet();

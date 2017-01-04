@@ -11,9 +11,14 @@ Search.prototype.titleSet = function() {
     var title = item.title;
     var date = item.release_date;
     var id = item.id;
-    var poster = "<img id='" + id + "' class='poster' src='http://image.tmdb.org/t/p/w185/" + item.poster_path + "'>";
+    var image = item.poster_path;
+    if (image) {
+      var poster = "<img id='" + id + "' class='poster' src='http://image.tmdb.org/t/p/w185/" + item.poster_path + "'>";
+    } else {
+      var poster = "<img id='" + id + "' class='poster' src='http://cdn.topdogtips.com/wp-content/uploads/2015/03/Dog-Nutrition-101-A-Quick-Overview-of-Dog-Feeding-2.jpg'>";
+    }
     var overview = item.overview;
-    $("#output").append("<div class='movie'><h3>" + title + "</h3><h5>" + date + "</h5><p>" + overview + "</p>" + poster + "</div>");
+    $("#output").append("<div class='movie'>" + poster + "</div>");
   });
 
 };
@@ -27,13 +32,14 @@ Search.prototype.actorSet = function() {
   });
 };
 Search.prototype.cast = function (actors) {
-  debugger;
+  $('#outputDetail').html("");
   for (i=0; i<6; i++) {
     console.log(actors[i]);
     var name = actors.cast[i].name;
     var character = actors.cast[i].character;
     var id = actors.cast[i].id;
     var profile = "<img class='image' src='http://image.tmdb.org/t/p/w185/" + actors.cast[i].profile_path + "'>";
+    $("#outputDetail").append("<div class='actor'><h3>" + name + "</h3><h5>Character: " + character + "</h5>" + profile + "</div>");
   }
 };
 
