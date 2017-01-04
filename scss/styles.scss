@@ -46,6 +46,10 @@ form {
   margin: 10px 0;
   border: 1px solid black;
   text-align: center;
+  .poster:hover {
+    cursor: pointer;
+    opacity: 0.3;
+  }
   img {
     display: block;
     margin: 0 auto;
