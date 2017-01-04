@@ -1,10 +1,26 @@
+//variables
+$prim-color: teal;
+$sec-color: orange;
 .container {
+  h1 {
+    color: $prim-color;
+    text-align: center;
+    font-size: 2.5em;
+    font-family: sans-serif;
+  }
+  h4 {
+    color: $sec-color;
+    font-family: sans-serif;
+    text-align: center;
+  }
+}
+form {
+  height: 30vh;
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-}
-form {
   button {
     height: 30px;
     width: 60px;
@@ -16,7 +32,22 @@ form {
     padding: 0;
   }
   select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
     height: 30px;
+    width: 70px;
+    padding: 0 10px;
     border: 1px solid #777
+  }
+}
+.movie {
+  margin: 10px 0;
+  border: 1px solid black;
+  text-align: center;
+  img {
+    display: block;
+    margin: 0 auto;
   }
 }
