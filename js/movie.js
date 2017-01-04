@@ -1,8 +1,4 @@
-function Search() {
-  this.results = [];
+function Movie() {
+  this.title;
+  this.actors = [];
 }
-
-Search.prototype.resultsSet = function(array) {
-  this.results = array;
-};
-exports.searchModule = Search;
