@@ -19,7 +19,6 @@ Search.prototype.posterSet = function() {
 
 };
 Search.prototype.titleSet = function(movie) {
-  console.log(movie);
   var title = movie.title;
   var date = movie.release_date;
   var id = movie.id;
@@ -53,19 +52,32 @@ Search.prototype.actorSet = function() {
     }
   });
 };
+
 Search.prototype.cast = function (actors) {
   for (i=0; i<6; i++) {
-    console.log(actors[i]);
     var name = actors.cast[i].name;
     var character = actors.cast[i].character;
     var id = actors.cast[i].id;
     var profileImage = actors.cast[i].profile_path;
     var profile;
     if (profileImage) {
-      profile = "<img class='image' src='http://image.tmdb.org/t/p/w185/" + actors.cast[i].profile_path + "'>";
+      profile = "<img class='image' id='"+id+"' src='http://image.tmdb.org/t/p/w185/" + actors.cast[i].profile_path + "'>";
+
       $("#outputDetail .actors").append("<div class='actor'><h3>" + name + "</h3><h5>Character: " + character + "</h5>" + profile + "</div>");
     }
   }
+};
+Search.prototype.filmography = function(films) {
+  films.cast.forEach(function(film) {
+    debugger;
+    var filmId = film.id;
+    var poster;
+    var image = film.poster_path;
+    if (image) {
+      poster = "<img id='" + filmId + "' class='poster' src='http://image.tmdb.org/t/p/w185/" + image + "'>";
+      $("#output").append("<div class='movie'>" + poster + "</div>");
+    }
+  });
 };
 
 exports.searchModule = Search;

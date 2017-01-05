@@ -93,6 +93,9 @@ form {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    .image {
+      cursor: pointer;
+    }
   }
   .movieDetails {
     position: relative;
