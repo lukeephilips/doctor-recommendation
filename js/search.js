@@ -12,7 +12,7 @@ Search.prototype.posterSet = function() {
     var image = item.poster_path;
     var poster;
     if (image) {
-      poster = "<img id='" + id + "' class='poster' src='http://image.tmdb.org/t/p/w185/" + item.poster_path + "'>";
+      poster = "<img id='" + id + "' class='poster' src='http://image.tmdb.org/t/p/w185/" + image + "'>";
     } else {
       poster = "<img id='" + id + "' class='poster' src='http://cdn.topdogtips.com/wp-content/uploads/2015/03/Dog-Nutrition-101-A-Quick-Overview-of-Dog-Feeding-2.jpg'>";
     }
@@ -21,12 +21,25 @@ Search.prototype.posterSet = function() {
 
 };
 Search.prototype.titleSet = function(movie) {
+  console.log(movie);
   var title = movie.title;
   var date = movie.release_date;
   var id = movie.id;
   var overview = movie.overview;
-  $('#outputDetail').html("<div class='movieInformation'>"+"<h3>"+title+"</h3>"+"</div>");
-  debugger;
+  var budget = movie.budget;
+
+  var genres = [];
+  genres.push(movie.genres[0].name, movie.genres[1].name);
+  genres = genres.join(" ");
+
+  var backdrop;
+  var backdropImage = movie.backdrop_path;
+  if (backdropImage) {
+    backdrop = "http://image.tmdb.org/t/p/original/" + backdropImage;
+  }
+
+  $('#outputDetail').html("<div class='movieInformation'>"+"<h3>"+title+"</h3><h6>"+date+"</h6><h6>"+budget+"</h6><p>"+ genres+"</p><p>"+overview+"</p></div>");
+  $('#outputDetail').css('background-image', 'url('+ backdrop +')');
 };
 
 Search.prototype.actorSet = function() {
