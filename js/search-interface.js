@@ -19,7 +19,7 @@ $(document).ready(function() {
             userSearch.posterSet();
 
             $('.poster').click(function() {
-              $('#outputDetail').html("");
+              $('#outputDetail').html("<div class='movieDetails'><img class='x' src='http://www.iconsdb.com/icons/preview/white/x-mark-xxl.png'></div><div class='actors'></div>");
               $.get("https://api.themoviedb.org/3/movie/"+this.id+"?api_key="+ apiKey+"&language=en-US").then(function(response) {
                 console.log("response = " + response);
                 userSearch.titleSet(response);
@@ -31,7 +31,7 @@ $(document).ready(function() {
               });
 
               $("#outputDetail").show();
-              $('#outputDetail').click(function() {
+              $('.x').click(function() {
                 $('#outputDetail').hide();
               });
             });

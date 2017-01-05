@@ -94,10 +94,23 @@ form {
     flex-wrap: wrap;
     align-items: center;
   }
-  .movieInformation {
+  .movieDetails {
+    position: relative;
     border-radius: 20px 20px 0 0;
     padding: 50px;
     background: rgba(0,0,0,0.7);
+    .x {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      right: 0;
+      width: 25px;
+      height: 25px;
+      transition: opacity ease-in-out 200ms;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
   }
   h2 {
     font-size: 3em;

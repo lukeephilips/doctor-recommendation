@@ -13,10 +13,8 @@ Search.prototype.posterSet = function() {
     var poster;
     if (image) {
       poster = "<img id='" + id + "' class='poster' src='http://image.tmdb.org/t/p/w185/" + image + "'>";
-    } else {
-      poster = "<img id='" + id + "' class='poster' src='http://cdn.topdogtips.com/wp-content/uploads/2015/03/Dog-Nutrition-101-A-Quick-Overview-of-Dog-Feeding-2.jpg'>";
+      $("#output").append("<div class='movie'>" + poster + "</div>");
     }
-    $("#output").append("<div class='movie'>" + poster + "</div>");
   });
 
 };
@@ -37,9 +35,9 @@ Search.prototype.titleSet = function(movie) {
   if (backdropImage) {
     backdrop = "http://image.tmdb.org/t/p/original/" + backdropImage;
   }
-
-  $('#outputDetail').append("<div class='movieInformation'>"+"<h2>"+title+"</h2><h6>"+date+"</h6><h6>"+budget+"</h6><p>"+ genres+"</p><p>"+overview+"</p></div>");
+  $('#outputDetail .movieDetails').append("<h2>"+title+"</h2><h6>"+date+"</h6><h6>"+budget+"</h6><p>"+ genres+"</p><p>"+overview+"</p>");
   $('#outputDetail').css('background-image', 'url('+ backdrop +')');
+
 };
 
 Search.prototype.actorSet = function() {
@@ -47,19 +45,26 @@ Search.prototype.actorSet = function() {
     var name = item.name;
     var knownFor = item.known_for[0].title;
     var id = item.id;
-    var image = "<img class='image' src='http://image.tmdb.org/t/p/w185/" + item.profile_path + "'>";
-    $("#output").append("<div class='movie'><h3>" + name + "</h3><h5>Known for: " + knownFor + "</h5>" + image + "</div>");
+    var photo = item.profile_path;
+    var image;
+    if (photo) {
+      image = "<img class='image' src='http://image.tmdb.org/t/p/w185/" + item.profile_path + "'>";
+      $("#output").append("<div class='movie'><h3>" + name + "</h3><h5>Known for: " + knownFor + "</h5>" + image + "</div>");
+    }
   });
 };
 Search.prototype.cast = function (actors) {
-  $('#outputDetail').append("<div class='actors'></div>");
   for (i=0; i<6; i++) {
     console.log(actors[i]);
     var name = actors.cast[i].name;
     var character = actors.cast[i].character;
     var id = actors.cast[i].id;
-    var profile = "<img class='image' src='http://image.tmdb.org/t/p/w185/" + actors.cast[i].profile_path + "'>";
-    $("#outputDetail .actors").append("<div class='actor'><h3>" + name + "</h3><h5>Character: " + character + "</h5>" + profile + "</div>");
+    var profileImage = actors.cast[i].profile_path;
+    var profile;
+    if (profileImage) {
+      profile = "<img class='image' src='http://image.tmdb.org/t/p/w185/" + actors.cast[i].profile_path + "'>";
+      $("#outputDetail .actors").append("<div class='actor'><h3>" + name + "</h3><h5>Character: " + character + "</h5>" + profile + "</div>");
+    }
   }
 };
 
