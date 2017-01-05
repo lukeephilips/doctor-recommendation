@@ -1,3 +1,4 @@
+
 function Search() {
   this.results = [];
 }
@@ -69,7 +70,6 @@ Search.prototype.cast = function (actors) {
 };
 Search.prototype.filmography = function(films) {
   films.cast.forEach(function(film) {
-    debugger;
     var filmId = film.id;
     var poster;
     var image = film.poster_path;
