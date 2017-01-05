@@ -13,13 +13,8 @@ module.exports =  {
       MoviesObject.cast(apiReponse);
       // click on actor face
       $('.image').click(function() {
-        // $('#output').html("");
         var actorId = this.id;
         headshot.headshotClickListener(MoviesObject, actorId);
-        // $.get("https://api.themoviedb.org/3/person/" + this.id + "/movie_credits?api_key="+ apiKey +"&page=1&language=en-US").then(function(films) {
-        //   MoviesObject.filmography(films);
-        //   $('#outputDetail').hide();
-        // });
       });
     });
     $("#outputDetail").show();

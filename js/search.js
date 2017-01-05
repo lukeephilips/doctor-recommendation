@@ -19,6 +19,11 @@ Search.prototype.posterSet = function() {
   });
 
 };
+Search.prototype.inputSet = function(movie) {
+  var title = movie.title;
+  $('input').val(title);
+};
+
 Search.prototype.titleSet = function(movie) {
   var title = movie.title;
   var date = movie.release_date;
