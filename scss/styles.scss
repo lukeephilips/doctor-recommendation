@@ -75,22 +75,36 @@ form {
   }
 }
 #outputDetail {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
   position: absolute;
   top: 0;
   left:0;
   right: 0;
   bottom: 0;
-  padding: 10%;
+  padding:10%;
   width: 100%;
   color: white;
   background: rgba(0,0,0,.9);
   background-size: cover;
+  .actors {
+    background: rgba(0,0,0,0.7);
+    border-radius: 0 0 20px 20px;
+    padding: 50px 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .movieInformation {
+    border-radius: 20px 20px 0 0;
+    padding: 50px;
+    background: rgba(0,0,0,0.7);
+  }
+  h2 {
+    font-size: 3em;
+    text-align: center;
+  }
   img {
-    margin: 30px;
+    margin: 20px;
     width: 200px;
     height: 300px;
     object-fit: cover;

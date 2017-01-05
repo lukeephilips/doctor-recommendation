@@ -38,7 +38,7 @@ Search.prototype.titleSet = function(movie) {
     backdrop = "http://image.tmdb.org/t/p/original/" + backdropImage;
   }
 
-  $('#outputDetail').html("<div class='movieInformation'>"+"<h3>"+title+"</h3><h6>"+date+"</h6><h6>"+budget+"</h6><p>"+ genres+"</p><p>"+overview+"</p></div>");
+  $('#outputDetail').append("<div class='movieInformation'>"+"<h2>"+title+"</h2><h6>"+date+"</h6><h6>"+budget+"</h6><p>"+ genres+"</p><p>"+overview+"</p></div>");
   $('#outputDetail').css('background-image', 'url('+ backdrop +')');
 };
 
@@ -52,13 +52,14 @@ Search.prototype.actorSet = function() {
   });
 };
 Search.prototype.cast = function (actors) {
+  $('#outputDetail').append("<div class='actors'></div>");
   for (i=0; i<6; i++) {
     console.log(actors[i]);
     var name = actors.cast[i].name;
     var character = actors.cast[i].character;
     var id = actors.cast[i].id;
     var profile = "<img class='image' src='http://image.tmdb.org/t/p/w185/" + actors.cast[i].profile_path + "'>";
-    $("#outputDetail").append("<div class='actor'><h3>" + name + "</h3><h5>Character: " + character + "</h5>" + profile + "</div>");
+    $("#outputDetail .actors").append("<div class='actor'><h3>" + name + "</h3><h5>Character: " + character + "</h5>" + profile + "</div>");
   }
 };
 

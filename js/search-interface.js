@@ -25,8 +25,6 @@ $(document).ready(function() {
                 userSearch.titleSet(response);
               });
 
-
-
               $.get("https://api.themoviedb.org/3/movie/" + this.id + "/credits?api_key="+ apiKey).then(function(response) {
                 console.log(response);
                 userSearch.cast(response);
