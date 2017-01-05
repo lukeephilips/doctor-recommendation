@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 $prim-color: teal;
 $sec-color: orange;
@@ -83,11 +84,14 @@ form {
   left:0;
   right: 0;
   bottom: 0;
+  padding: 10%;
   width: 100%;
-  background: rgba(0,0,0,0.8);
+  color: white;
+  background: rgba(0,0,0,.9);
   img {
-    width: 250px;
-    height: 350px;
+    margin: 30px;
+    width: 200px;
+    height: 300px;
     object-fit: cover;
   }
 }
