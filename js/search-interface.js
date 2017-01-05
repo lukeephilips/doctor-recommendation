@@ -1,6 +1,6 @@
 var apiKey = require('./../.env').apiKey;
 var Search = require('./../js/search.js').searchModule;
-var Listeners = require('./../js/listeners.js');
+var Listeners = require('./../js/poster-listener.js');
 
 $(document).ready(function() {
 
