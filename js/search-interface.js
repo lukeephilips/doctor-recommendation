@@ -1,13 +1,18 @@
 var apiKey = require('./../.env').apiKey;
 var Search = require('./../js/search.js').searchModule;
 var Listeners = require('./../js/poster-listener.js');
+var loopingIdModule = require('./../js/headshot-listener.js');
 
 $(document).ready(function() {
-
-
   $("#outputDetail").hide();
   $('form').submit(function(event) {
     $('#output').html("");
+    var loopingId = loopingIdModule.loopingId;
+    console.log("hi"+loopingId);
+    if (loopingId) {
+      $('#'+loopingId).trigger("click");
+    }
+
     event.preventDefault();
     var searchType = $('#searchOne').val();
     var searchString = $('#searchOneText').val();
@@ -20,9 +25,8 @@ $(document).ready(function() {
           userSearch.resultsSet(response);
           if (searchType === "movie") {
             userSearch.posterSet();
-// click on movie poster to open movie details
+// 1st level click on movie poster to open movie details
             $('.poster').click(function() {
-              console.log(userSearch+" - "+response+"this="+this.id);
               Listeners.PosterClickListener(userSearch,response, this.id);
             });
           } else {

@@ -21,7 +21,9 @@ Search.prototype.posterSet = function() {
 };
 Search.prototype.inputSet = function(movie) {
   var title = movie.title;
+  var id = movie.id;
   $('input').val(title);
+  $('form').trigger('submit');
 };
 
 Search.prototype.titleSet = function(movie) {
