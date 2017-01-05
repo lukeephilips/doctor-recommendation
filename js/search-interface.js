@@ -16,10 +16,13 @@ $(document).ready(function() {
     event.preventDefault();
     var searchType = $('#searchOne').val();
     var searchString = $('#searchOneText').val();
+    if (searchString === "") {
+      $('#output').html("<div id='error'><h3>Search for something.</h3></div>");
+    }
 // poster API call
     $.get("https://api.themoviedb.org/3/search/"+searchType+"?api_key="+apiKey+"&language=en-US&query="+searchString+"&page=1&include_adult=false").then(function(response) {
       if(response.results.length === 0) {
-        $('#output').text('Sorry Charlie. Check your spelling.');
+        $('#output').html("<div id='error'><h3>Sorry Charlie. Check your spelling.</h3></div>");
       } else {
           var userSearch = new Search();
           userSearch.resultsSet(response);

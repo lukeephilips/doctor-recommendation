@@ -35,14 +35,14 @@ Search.prototype.titleSet = function(movie) {
 
   var genres = [];
   genres.push(movie.genres[0].name, movie.genres[1].name);
-  genres = genres.join(" ");
+  genres = genres.join(" and ");
 
   var backdrop;
   var backdropImage = movie.backdrop_path;
   if (backdropImage) {
     backdrop = "http://image.tmdb.org/t/p/original/" + backdropImage;
   }
-  $('#outputDetail .movieDetails').append("<h2>"+title+"</h2><h6>"+date+"</h6><h6>"+budget+"</h6><p>"+ genres+"</p><p>"+overview+"</p>");
+  $('#outputDetail .movieDetails').append("<h2>"+title+"</h2><h6>Release date: "+date+"</h6><h6>Genre: "+ genres+"</h6><p>"+overview+"</p>");
   $('#outputDetail').css('background-image', 'url('+ backdrop +')');
 
 };
@@ -56,7 +56,7 @@ Search.prototype.actorSet = function() {
     var image;
     if (photo) {
       image = "<img class='image' src='http://image.tmdb.org/t/p/w185/" + item.profile_path + "'>";
-      $("#output").append("<div class='movie'><h3>" + name + "</h3><h5>Known for: " + knownFor + "</h5>" + image + "</div>");
+      $("#output").append("<div class='headshot'><h3>" + name + "</h3><h5>Known for: " + knownFor + "</h5>" + image + "</div>");
     }
   });
 };
