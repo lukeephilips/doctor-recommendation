@@ -4,48 +4,59 @@
   padding: 0;
   box-sizing: border-box;
 }
-$prim-color: teal;
+@import url('https://fonts.googleapis.com/css?family=Righteous|Russo+One');
+$background-color: #212121;
+$prim-color: #4a7199;
 $sec-color: orange;
+
+//start of styles
+
 .container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background: $background-color;
+  overflow: auto;
   h1 {
     color: $prim-color;
     text-align: center;
-    font-size: 2.5em;
-    font-family: sans-serif;
-  }
-  h4 {
-    color: $sec-color;
-    font-family: sans-serif;
-    text-align: center;
+    font-size: 4em;
+    letter-spacing: 2px;
+    font-family: 'Russo One', sans-serif;
   }
 }
 form {
-  height: 30vh;
   width: 80%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   button {
-    height: 30px;
-    width: 60px;
-    border: 1px solid #777;
-    background: none;
+    border-radius: 5px;
+    border: 2px solid $sec-color;
+    height: 60px;
+    width: 100px;
+    background: white;
+    font-size: 1.3em;
   }
   input {
-    height: 27px;
-    padding: 0;
+    margin: 10px;
+    height: 60px;
+    width: 300px;
+    background: white;
+    border: 2px solid $sec-color;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.5em;
   }
   select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 0;
-    height: 30px;
-    width: 70px;
+    font-size: 1.3em;
+    height: 60px;
+    width: 100px;
     padding: 0 10px;
-    border: 1px solid #777
+    border: 2px solid $sec-color;
   }
 }
 #output {
