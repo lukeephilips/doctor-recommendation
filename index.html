@@ -5,18 +5,33 @@
     <script type="text/javascript" src="./build/js/app.js"></script>
     <link rel="stylesheet" href="./build/css/vendor.css">
     <link rel="stylesheet" href="./build/css/styles.css">
-    <title>Doctor thing</title>
+    <title>Doctor Finder</title>
   </head>
   <body>
     <div class="container">
-      <h1>Doctor thing</h1>
+      <h1>Doctor Finder</h1>
+      <p id="subtext">Use the typeaheads to find a doctor in your area</p>
       <form>
         <div class="input-group userInput">
-          <input type="text" class="form-control" id="symptom" placeholder="Enter your symptom">
-          <input type="text" class="form-control" id="specialty" placeholder="Enter a specialty">
-          <span class="input-group-btn">
-            <button type="submit" class="btn" name="button">Search</button>
+          <ul class="dropdown-menu dropdown-menu-right">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+          <span class="input-group-select">
+            <select class="form-control selectpicker" id="location">
+              <option value ="or-portland">Portland</option>
+              <option value ="ca-san-francisco">San Francisco</option>
+              <option value ="wa-seattle">Seattle</option>
+              <option value ="il-chicago">Chicago</option>
+              <option value ="ny-new-york">New York</option>
+            </select>
           </span>
+          <input type="text" class="form-control" id="symptom" placeholder="Enter a symptom">
+          <input type="text" class="form-control" id="specialty" placeholder="Enter a specialty">
+            <button type="submit" class="btn" name="button">Search</button>
         </div>
       </form>
       <div id="output">

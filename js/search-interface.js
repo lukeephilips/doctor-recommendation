@@ -1,17 +1,16 @@
 var apiModule = require('./../js/search.js');
 
-
-
 $(document).ready(function() {
 
-  var specialties = apiModule.getSpecialties();
+  apiModule.getSpecialties();
   apiModule.getConditions();
 
   $("form").submit(function(event){
     event.preventDefault();
     var symptom = $('#symptom').val();
     var specialty = $('#specialty').val();
-    apiModule.getDoctors(symptom, specialty);
+    var location = $('#location').val();
+    apiModule.getDoctors(symptom, specialty,location);
 
   });
 });

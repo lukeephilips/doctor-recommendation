@@ -29,8 +29,21 @@ body {
   color: white;
   list-style: none;
 }
-input {
+.input {
   color: white;
+}
+.inputgroup {
+  border-radius: 0%;
+}
+#symptom {
+  width: 35%;
+}
+#specialty {
+  width: 35%;
+}
+#location {
+  width: 15%;
+  border-radius: 0%;
 }
 p {
   color: $color-light;
@@ -38,19 +51,20 @@ p {
   font-family: 'Lato', sans-serif;
 
 }
-.userInput .form-control{
-  width: 50%;
+#subtext {
+  text-align: center;
 }
+// .userInput .form-control{
+//   width: 50%;
+// }
 form {
-  width: 80%;
+  // width: 80%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-select .selectpicker {
-  border-radius: 0%;
-}
+
 button.btn {
   background: $prim-color;
 }
@@ -67,7 +81,7 @@ h2, h3 {
   text-align: center;
   color: darkred;
 }
-h5 {
+h4, h5 {
   color: $color-light;
   font-family: 'Hind Madurai', sans-serif;
   text-align: center;
