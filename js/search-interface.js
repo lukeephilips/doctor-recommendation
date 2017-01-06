@@ -33,7 +33,19 @@ $(document).ready(function() {
               Listeners.PosterClickListener(userSearch,response, this.id);
             });
           } else {
-            userSearch.actorSet();
+            userSearch.actorSet(response);
+            $('.image').click(function() {
+              $.get("https://api.themoviedb.org/3/person/" + this.id + "/movie_credits?api_key="+ apiKey +"&page=1&language=en-US").then(function(newResponse) {
+                userSearch.resultsSet(newResponse);
+                console.log(userSearch);
+                userSearch.actorToMovie();
+                $('.poster').click(function() {
+                  $('#searchOne').val("movie");
+                  Listeners.PosterClickListener(userSearch,response, this.id);
+                });
+              });
+              // loopingIdModule.headshotClickListener(response, this.id);
+            });
           }
         }
       }).fail(function(error){

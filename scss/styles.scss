@@ -90,10 +90,15 @@ form {
       color: $color-light;
     }
     img {
+      transition: opacity ease-in-out 200ms;
       height: 300px;
       width: 200px;
       object-fit: cover;
       margin: 10px;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
     }
   }
   .movie {
@@ -157,8 +162,12 @@ form {
     flex-wrap: wrap;
     align-items: center;
     .image {
+      transition: opacity ease-in-out 200ms;
       cursor: pointer;
       text-align: center;
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
   .movieDetails {

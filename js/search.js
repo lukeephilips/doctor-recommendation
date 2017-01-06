@@ -17,8 +17,21 @@ Search.prototype.posterSet = function() {
       $("#output").append("<div class='movie'>" + poster + "</div>");
     }
   });
-
 };
+Search.prototype.actorToMovie = function() {
+  $('#output').html("");
+  debugger;
+  this.results.cast.forEach(function(item){
+    var id = item.id;
+    var image = item.poster_path;
+    var poster;
+    if (image) {
+      poster = "<img id='" + id + "' class='poster' src='http://image.tmdb.org/t/p/w185/" + image + "'>";
+      $("#output").append("<div class='movie'>" + poster + "</div>");
+    }
+  });
+};
+
 Search.prototype.inputSet = function(movie) {
   var title = movie.title;
   var id = movie.id;
@@ -50,13 +63,13 @@ Search.prototype.titleSet = function(movie) {
 Search.prototype.actorSet = function() {
   this.results.results.forEach(function(item){
     var name = item.name;
-    var knownFor = item.known_for[0].title;
-    var id = item.id;
+    // var knownFor = item.known_for[0].title;
+    var actorId = item.id;
     var photo = item.profile_path;
     var image;
     if (photo) {
-      image = "<img class='image' src='http://image.tmdb.org/t/p/w185/" + item.profile_path + "'>";
-      $("#output").append("<div class='headshot'><h3>" + name + "</h3><h5>Known for: " + knownFor + "</h5>" + image + "</div>");
+      image = "<img class='image' id='"+actorId+"' src='http://image.tmdb.org/t/p/w185/" + item.profile_path + "'>";
+      $("#output").append("<div class='headshot'><h3>" + name + "</h3>" + image + "</div>");
     }
   });
 };
