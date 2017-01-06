@@ -12,7 +12,20 @@ $font-family: sans-serif;
 $color-light: white;
 
 //start of styles
-
+p {
+  color: $color-light;
+  display: inline-block;
+  
+}
+h2, h3 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 2em;
+  text-align: center;
+  color: darkred;
+}
+.headshot{
+  display: inline-block;
+}
 .container {
   position: relative;
   display: flex;
@@ -71,62 +84,9 @@ form {
     margin-top: 15px;
     font-size: 1.1em;
   }
-  .headshot {
-    margin-top: 50px;
-    h3 {
-      font-size: 1.3em;
-      font-family: 'Russo One', sans-serif;
-      color: $color-light;
-      text-align: center;
-    }
-    h5 {
-      margin: 0 auto;
-      font-family: $font-family;
-      text-align: center;
-      width: 200px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      color: $color-light;
-    }
-    img {
-      transition: opacity ease-in-out 200ms;
-      height: 300px;
-      width: 200px;
-      object-fit: cover;
-      margin: 10px;
-      &:hover {
-        cursor: pointer;
-        opacity: 0.8;
-      }
-    }
-  }
-  .movie {
-    margin: 10px 0;
-    text-align: center;
-    .poster {
-      transition: opacity ease-in-out 200ms;
-      opacity: 1;
-      margin: 0px 5px;
-      border-radius: 3px;
-      &:hover {
-        cursor: pointer;
-        opacity: 0.6;
-      }
-    }
-    img {
-      height: 300px;
-      width: 200px;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto;
-    }
-  }
 }
 
 #outputDetail {
-  position: absolute;
-  height: 100%;
   top: 0;
   left:0;
   right: 0;
@@ -134,7 +94,7 @@ form {
   padding:7% 10%;
   width: 100%;
   color: $color-light;
-  background: rgba(0,0,0,.9);
+  // background: rgba(0,0,0,.9);
   background-size: cover;
   background-position: center;
 
@@ -154,7 +114,7 @@ form {
       text-overflow: ellipsis;
       color: $color-light;
     }
-    background: rgba(0,0,0,0.7);
+    // background: rgba(0,0,0,0.7);
     border-radius: 0 0 20px 20px;
     padding: 50px 0px;
     display: flex;
@@ -195,11 +155,7 @@ form {
       }
     }
   }
-  h2, h3 {
-    font-family: 'Russo One', sans-serif;
-    font-size: 2.7em;
-    text-align: center;
-  }
+
   h2 {
     margin-bottom: 15px;
   }
