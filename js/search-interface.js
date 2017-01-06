@@ -1,11 +1,13 @@
-var getDoctors = require('./../js/search.js').getDoctors;
+var apiModule = require('./../js/search.js');
 
 $(document).ready(function() {
+  var specialties = apiModule.getSpecialties();
+
   $("form").submit(function(event){
     event.preventDefault();
 
     var symptom = $('#symptom').val();
-    getDoctors(symptom);
+    apiModule.getDoctors(symptom);
 
   });
 });

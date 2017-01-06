@@ -4,11 +4,11 @@ exports.getDoctors = function(medicalIssue) {
   $('#output').html("");
 
   $('#output').append("<h5>You searched for: "+medicalIssue+"</h5>");
-  var apiCall = $.get('https://api.betterdoctor.com/2016-03-01/doctors?query='+ medicalIssue+'&location=45.5231%2C-122.6765%2C%205&user_location=45.5231%2C-122.6765&skip=0&limit=20&user_key=' + apiKey)
+  $.get('https://api.betterdoctor.com/2016-03-01/doctors?query='+ medicalIssue+'&location=45.5231%2C-122.6765%2C%205&user_location=45.5231%2C-122.6765&skip=0&limit=20&user_key=' + apiKey)
    .then(function(response) {
      console.log(response);
      if (response.data.length === 0) {
-       $('#output').append("<h2 id='error'>No results found</h2>");
+       $('#output').append("<div id='error'><h2>No results found</h2><img src='http://www.politedissent.com/images/jun10/camels.jpg'></div>");
      }
      else {
        response.data.forEach(function(doctor) {
@@ -26,6 +26,19 @@ exports.getDoctors = function(medicalIssue) {
      }
 })
 .fail(function(error){
-      alert("fail");
+      console.log("api call failed");
     });
 };
+
+exports.getSpecialties = function(){
+  var specialties =[];
+    $.get('https://api.betterdoctor.com/2016-03-01/specialties?user_key=' + apiKey)
+    .then(function(response) {
+      response.data.forEach(function(specialty) {
+        specialties.push(specialty.name);
+      });
+    })
+    .fail(function(error){
+      console.log("api call failed");
+    });
+  };
