@@ -1,47 +1,35 @@
-//variables
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-@import url('https://fonts.googleapis.com/css?family=Righteous|Russo+One');
+// variables
+
+@import url('https://fonts.googleapis.com/css?family=Hind+Madurai|Lato');
 $background-color: #212121;
 $prim-color: #377abe;
 $sec-color: #e36246;
 $font-family: sans-serif;
 $color-light: white;
 
-//start of styles
-p {
-  color: $color-light;
-  display: inline-block;
-
+// //start of styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.headshot{
-  display: inline-block;
+body {
+  background: darkred;
 }
 .container {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  background: $background-color;
-  overflow: auto;
-  h1 {
-    color: $prim-color;
-    text-align: center;
-    font-size: 4em;
-    letter-spacing: 2px;
-    font-family: 'Russo One', sans-serif;
-  }
-  h2, h3 {
-    font-family: 'Russo One', sans-serif;
-    font-size: 2em;
-    text-align: center;
-    color: darkred;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    background: $background-color;
+    overflow: auto;
+}
+p {
+  color: $color-light;
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+
 }
 form {
   width: 80%;
@@ -49,33 +37,25 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  button {
-    border-radius: 5px;
-    border: 5px solid $sec-color;
-    height: 60px;
-    width: 100px;
-    background: $color-light;
-    font-size: 1.3em;
-  }
-  input {
-    margin: 10px;
-    height: 60px;
-    width: 300px;
-    background: $color-light;
-    border: 5px solid $sec-color;
-    border-radius: 5px;
-    padding: 8px;
-    font-size: 1.5em;
-  }
 }
-#output {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  #error {
-    color: $color-light;
-    font-family: 'Russo One', sans-serif;
-    margin-top: 15px;
-    font-size: 1.1em;
-  }
+button.btn {
+  background: $prim-color;
+}
+h1 {
+  color: $prim-color;
+  text-align: center;
+  font-size: 4em;
+  letter-spacing: 2px;
+  font-family: 'Hind Madurai', sans-serif;
+}
+h2, h3 {
+  font-family: 'Hind Madurai', sans-serif;
+  font-size: 2em;
+  text-align: center;
+  color: darkred;
+}
+h5 {
+  color: $color-light;
+  font-family: 'Hind Madurai', sans-serif;
+  text-align: center;
 }

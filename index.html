@@ -3,6 +3,7 @@
   <head>
     <script type="text/javascript" src="./build/js/vendor.min.js"></script>
     <script type="text/javascript" src="./build/js/app.js"></script>
+    <link rel="stylesheet" href="./build/css/vendor.css">
     <link rel="stylesheet" href="./build/css/styles.css">
     <title>Doctor thing</title>
   </head>
@@ -10,12 +11,14 @@
     <div class="container">
       <h1>Doctor thing</h1>
       <form>
-        <input type="text" id="symptom" name="symptom">
-        <button type="submit" name="button">Search</button>
+        <div class="input-group col-sm-3">
+        <input type="text" class="form-control " id="symptom" name="symptom">
+        <span class="input-group-btn">
+          <button type="submit" class="btn" name="button">Search</button>
+        </span>
+      </div>
       </form>
       <div id="output">
-      </div>
-      <div id="outputDetail">
       </div>
     </div><!--end of container-->
   </body>
