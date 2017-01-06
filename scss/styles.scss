@@ -25,11 +25,21 @@ body {
     background: $background-color;
     overflow: auto;
 }
+.ui-autocomplete {
+  color: white;
+  list-style: none;
+}
+input {
+  color: white;
+}
 p {
   color: $color-light;
   display: inline-block;
   font-family: 'Lato', sans-serif;
 
+}
+.userInput .form-control{
+  width: 50%;
 }
 form {
   width: 80%;
@@ -37,6 +47,9 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+select .selectpicker {
+  border-radius: 0%;
 }
 button.btn {
   background: $prim-color;
